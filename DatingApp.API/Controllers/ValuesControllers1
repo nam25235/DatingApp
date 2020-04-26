@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+
+namespace DatingApp.API.Controllers
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class ValuesController : ControllerBase
+    {
+        // GET api/values
+        [HttpGet]
+        public  string GET()
+        {
+            return  "Hello";
+        }
+        [HttpGet("{name}")]
+        public string GET(string name){
+            return "Hello " +name; 
+        }
+        [HttpPost("{productName}")]
+        public string CreateNewProduct(string productName){
+            //save to database
+            return "Done";
+        }
+        [HttpPut]
+        public string ChangeProductName(string productName){
+            return "Change";
+        }
+    }
+}
